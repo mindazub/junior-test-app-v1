@@ -12,9 +12,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('admins')->truncate();
+        DB::table('users')->truncate();
         DB::table('employees')->truncate();
         DB::table('companies')->truncate();
-         $this->call(AdminTableSeeder::class);
+         $this->call(UserTableSeeder::class);
          $this->call(EmployeeTableSeeder::class);
     }
 }
