@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Employee;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CompanyController extends Controller
 {
@@ -12,9 +14,11 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index():view
     {
-        //
+        $companies = Company::paginate(10);
+
+        return View('home', compact('companies'));
     }
 
     /**
