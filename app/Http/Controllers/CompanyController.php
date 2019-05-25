@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Employee;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,9 +13,9 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function index():view
+    public function index():View
     {
         $companies = Company::paginate(10);
 
@@ -24,11 +25,14 @@ class CompanyController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create():View
     {
-        //
+        /** @var Collection $employees */
+        $employees = Employee::all();
+
+        return View('company.create', compact('employees'));
     }
 
     /**
