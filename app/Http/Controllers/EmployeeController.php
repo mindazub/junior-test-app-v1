@@ -57,15 +57,11 @@ class EmployeeController extends Controller
         $data = [
             'firstName' => $request->getFirstName(),
             'lastName' => $request->getLastName(),
+            'company' => $request->getCompany(),
 
         ];
 
-        if($request->getLogo()) {
-            $data['logo'] = $request->getLogo()->store(self::COVER_DIRECTORY);
-        }
-
-
-        $company->update($data, [$company->id]);
+        $employee->update($data, [$employee->id]);
 
         return redirect()
             ->route('home')
