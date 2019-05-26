@@ -30,7 +30,7 @@
 
                             @foreach($companies as $company)
                             <tr>
-                                <td><img width="100" src="{{ $company->logo }}" alt="logo"></td>
+                                <td><img width="100" src="{{ Storage::url($company->logo ) }}" alt="logo 2"></td>
                                 <td>{{ $company->name }}</td>
                                 <td>{{ $company->email }}</td>
                                 <td>{{ $company->website }}</td>

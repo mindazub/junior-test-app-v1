@@ -14,14 +14,9 @@
                             </div>
                         @endif
 
-                            Logo  	 Employee
+                        <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
 
-
-
-
-                            <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
-
-                                {{ csrf_field() }}
+                            {{ csrf_field() }}
 
                             <div class="form-group">
                                 <label for="name">{{ __('Name') }}:</label>
@@ -47,58 +42,20 @@
                                 @endif
                             </div>
 
-                                <div class="form-group">
-                                    <label for="logo">{{ __('Logo') }}</label>
-                                    <input id="logo" class="form-control" type="file" name="logo" accept=".jpg, .jpeg, .png">
-                                    @if($errors->has('logo'))
-                                        <div class="alert-danger">{{ $errors->first('logo') }}</div>
-                                    @endif
-                                </div>
+                            <div class="form-group">
+                                <label for="logo">{{ __('Logo') }}</label>
+                                <input id="logo" class="form-control" type="file" name="logo"
+                                       accept=".jpg, .jpeg, .png">
+                                @if($errors->has('logo'))
+                                    <div class="alert-danger">{{ $errors->first('logo') }}</div>
+                                @endif
+                            </div>
 
+                            <div class="form-group">
+                                <input class="btn btn-success" type="submit" value="{{ __('Create') }}">
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="employee_id">{{ __('Employees') }}:</label>
-                                    <br>
-                                    <select name="employees[]" size="5" multiple>
-                                    @foreach($employees as $employee)
-                                        <option value="{{ $employee->id }}"
-                                            {{ ($employee->id == old('employee_id')) ? 'selected="selected"' : '' }}
-                                        >
-                                            {{ $employee->name }}
-                                        </option>
-                                    @endforeach
-                                        <option value="audi">Audi</option>
-                                    </select>
-
-                                    @if($errors->has('employee_id'))
-                                        <div class="alert-danger">{{ $errors->first('employee_id') }}</div>
-                                    @endif
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="employee_id">{{ __('Employees 2') }}:</label>
-                                    <br>
-
-                                    @foreach($employees as $employee)
-                                        <input name="employees[]" type="checkbox" value="{{ $employee->id }}" {{ ($employee->id == old('employee_id')) ? 'selected' : '' }}>
-                                            {{ $employee->title }}
-                                        </input>
-                                    @endforeach
-
-
-                                    @if($errors->has('employee_id'))
-                                        <div class="alert-danger">{{ $errors->first('employee_id') }}</div>
-                                    @endif
-                                </div>
-
-
-
-                        <div class="form-group">
-                            <a class="btn btn-sm btn-success" href="{{ route('company.create') }}">{{ __('Create') }}</a>
-                        </div>
-
-                            </form>
+                        </form>
 
                     </div>
                 </div>

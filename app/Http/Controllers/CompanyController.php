@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Company;
-use App\Employee;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
+use App\Http\Requests\CompanyStoreRequest;
+use App\Http\Requests\CompanyUpdateRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class CompanyController extends Controller
 {
+
+    const COVER_DIRECTORY = 'companies';
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +19,7 @@ class CompanyController extends Controller
      */
     public function index():View
     {
-        $companies = Company::paginate(10);
+        $companies = Company::paginate(5);
 
         return View('home', compact('companies'));
     }
@@ -29,22 +31,32 @@ class CompanyController extends Controller
      */
     public function create():View
     {
-        /** @var Collection $employees */
-        $employees = Employee::all();
-
-        return View('company.create', compact('employees'));
+        return View('company.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param CompanyStoreRequest $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CompanyStoreRequest $request):RedirectResponse
     {
-        //
+
+        $data = [
+            'name' => $request->getName(),
+            'website' => $request->getWebsite(),
+            'email'=> $request->getEmail(),
+            'logo' => $request->getLogo()? $request->getLogo()->store(self::COVER_DIRECTORY) : null,
+        ];
+
+        $company = Company::create($data);
+
+        return redirect()
+            ->route('home')
+            ->with('status', 'Company created successfully!');
     }
+
 
     /**
      * Display the specified resource.
@@ -60,34 +72,61 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Company  $company
-     * @return \Illuminate\Http\Response
+     * @param Company $company
+     * @return View
+     * @throws \Exception
      */
-    public function edit(Company $company)
+    public function edit(Company $company): View
     {
-        //
+        return view('company.edit', compact('company'));
     }
+
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Company  $company
+     * @param CompanyUpdateRequest $request
+     * @param \App\Company $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(CompanyUpdateRequest $request, Company $company)
     {
-        //
+        $data = [
+            'name' => $request->getName(),
+            'website' => $request->getWebsite(),
+            'email'=> $request->getEmail(),
+        ];
+
+        if($request->getLogo()) {
+            $data['logo'] = $request->getLogo()->store(self::COVER_DIRECTORY);
+        }
+
+
+        $company->update($data, [$company->id]);
+
+        return redirect()
+            ->route('home')
+            ->with('status', 'Company updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Company  $company
-     * @return \Illuminate\Http\Response
+     * @param Company $company
+     * @return RedirectResponse|void
+     * @internal param int $id
      */
-    public function destroy(Company $company)
+    public function destroy(Company $company): RedirectResponse
     {
-        //
+        try {
+            $company->delete();
+            return redirect()
+                ->back()
+                ->with('status', 'Company deleted successfully!');
+        } catch (\Throwable $exception) {
+            return redirect()
+                ->back()
+                ->with('error', $exception->getMessage());
+        }
     }
 }
