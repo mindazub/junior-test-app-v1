@@ -21,6 +21,6 @@ class Employee extends Model
      */
     public function company(): BelongsTo
     {
-        return $this->belongsTO('App\Company');
+        return $this->belongsTo('App\Company');
     }
 }

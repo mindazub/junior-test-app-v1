@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Company;
-use App\Http\Requests\CompanyUpdateRequest;
+use App\Http\Requests\EmployeeStoreRequest;
+use App\Http\Requests\EmployeeUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -31,8 +32,37 @@ class EmployeeController extends Controller
      */
     public function create():View
     {
-        return View('employee.create');
+        $companies = Company::all();
+
+        return View('employee.create', compact('companies'));
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param EmployeeStoreRequest $request
+     * @return RedirectResponse
+     */
+    public function store(EmployeeStoreRequest $request):RedirectResponse
+    {
+
+        $data = [
+            'firstName' => $request->getFirstName(),
+            'lastName' => $request->getLastName(),
+            'website' => $request->getWebsite(),
+            'email'=> $request->getEmail(),
+            'company' => $request->getCompany(),
+        ];
+
+        $employee = Employee::create($data);
+//        $employee->company()->sync($request->getCompany());
+
+        return redirect()
+            ->route('employee.index')
+            ->with('status', 'Employee created successfully!');
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -42,7 +72,9 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee): View
     {
-        return view('employee.edit', compact('employee'));
+        $companies = Company::all();
+
+        return view('employee.edit', compact('employee', 'companies'));
     }
 
     /**
