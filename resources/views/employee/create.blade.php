@@ -35,16 +35,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="company">{{ __('Company') }}:</label>
-                                <select class="form-control @error('company') is-invalid @enderror" id="company" name="company_id" >
-                                    <option value="">{{ __('Select company') }}</option>
-                                    @foreach($companies as $company)
-                                        <option value="{{ $company->id }}" {{ ($company->id == old('company_id'))? 'selected' : '' }}>{{ $company->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
                                 <input id="website" class="form-control" type="text" name="website" value="">
                                 @if($errors->has('website'))
@@ -66,6 +56,16 @@
                                 @if($errors->has('email'))
                                     <div class="alert-danger">{{ $errors->first('email') }}</div>
                                 @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">{{ __('Company') }}:</label>
+                                <select class="form-control @error('company') is-invalid @enderror" id="company" name="company_id" >
+                                    <option value="">{{ __('Select company') }}</option>
+                                    @foreach($companies as $company)
+                                        <option value="{{ $company->id }}" {{ ($company->id == old('company_id'))? 'selected' : '' }}>{{ $company->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group">

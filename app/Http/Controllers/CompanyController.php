@@ -86,10 +86,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param CompanyUpdateRequest $request
-     * @param \App\Company $company
-     * @return \Illuminate\Http\Response
+     * @param Company $company
+     * @return RedirectResponse
      */
-    public function update(CompanyUpdateRequest $request, Company $company)
+    public function update(CompanyUpdateRequest $request, Company $company):RedirectResponse
     {
         $data = [
             'name' => $request->getName(),

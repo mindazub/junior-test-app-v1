@@ -39,21 +39,20 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="company">{{ __('Company') }}:</label>
-                                <select class="form-control @error('company') is-invalid @enderror" id="company" name="company">
-                                    <option value="">{{ __('Select company') }}</option>
-                                    @foreach($companies as $company)
-                                        <option name="companies[]" value="{{ $company['id'] }}" {{ ($company['id'] == old('company'))? 'selected' : '' }}>{{ $company['name'] }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
                                 <input id="website" class="form-control" type="text" name="website"
                                        value="{{ old('website', $employee->website ) }}">
                                 @if($errors->has('website'))
                                     <div class="alert-danger">{{ $errors->first('website') }}</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">{{ __('Phone') }}:</label>
+                                <input id="phone" class="form-control" type="text" name="phone"
+                                       value="{{ old('phone', $employee->phone ) }}">
+                                @if($errors->has('phone'))
+                                    <div class="alert-danger">{{ $errors->first('phone') }}</div>
                                 @endif
                             </div>
 
@@ -64,6 +63,16 @@
                                 @if($errors->has('email'))
                                     <div class="alert-danger">{{ $errors->first('email') }}</div>
                                 @endif
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">{{ __('Company') }}:</label>
+                                <select class="form-control @error('company') is-invalid @enderror" id="company" name="company_id">
+                                    <option value="">{{ __('Select company') }}</option>
+                                    @foreach($companies as $company)
+                                        <option name="companies[]" value="{{ $company['id'] }}" {{ ($company['id'] == old('company'))? 'selected' : '' }}>{{ $company['name'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="form-group">

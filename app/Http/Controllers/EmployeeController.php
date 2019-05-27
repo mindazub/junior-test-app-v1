@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Company;
-use App\Http\Requests\EmployeeStoreRequest;
 use App\Http\Requests\EmployeeUpdateRequest;
+use App\Http\Requests\EmployeeStoreRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -84,6 +84,7 @@ class EmployeeController extends Controller
      */
     public function update(EmployeeUpdateRequest $request, Employee $employee): RedirectResponse
     {
+
         $data = [
             'firstName' => $request->getFirstName(),
             'lastName' => $request->getLastName(),
@@ -93,13 +94,11 @@ class EmployeeController extends Controller
             'company_id' => $request->getCompanyId(),
         ];
 
-        dd($data);
-
         $employee->update($data, [$employee->id]);
 
         return redirect()
-            ->route('home')
-            ->with('status', 'Company updated successfully!');
+            ->route('employee.index')
+            ->with('status', 'Employee updated successfully!');
     }
     /**
      * Remove the specified resource from storage.
