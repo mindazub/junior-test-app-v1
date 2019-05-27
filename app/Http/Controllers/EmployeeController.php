@@ -7,7 +7,6 @@ use App\Company;
 use App\Http\Requests\EmployeeStoreRequest;
 use App\Http\Requests\EmployeeUpdateRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class EmployeeController extends Controller
@@ -45,17 +44,16 @@ class EmployeeController extends Controller
      */
     public function store(EmployeeStoreRequest $request):RedirectResponse
     {
-
         $data = [
             'firstName' => $request->getFirstName(),
             'lastName' => $request->getLastName(),
             'website' => $request->getWebsite(),
+            'phone' => $request->getPhone(),
             'email'=> $request->getEmail(),
-            'company' => $request->getCompany(),
+            'company_id' => $request->getCompanyId(),
         ];
 
         $employee = Employee::create($data);
-//        $employee->company()->sync($request->getCompany());
 
         return redirect()
             ->route('employee.index')
@@ -80,18 +78,22 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param CompanyUpdateRequest $request
-     * @param \App\Company $company
-     * @return \Illuminate\Http\Response
+     * @param EmployeeUpdateRequest $request
+     * @param Employee $employee
+     * @return RedirectResponse
      */
-    public function update(Request $request, Employee $employee)
+    public function update(EmployeeUpdateRequest $request, Employee $employee): RedirectResponse
     {
         $data = [
             'firstName' => $request->getFirstName(),
             'lastName' => $request->getLastName(),
-            'company' => $request->getCompany(),
-
+            'website' => $request->getWebsite(),
+            'phone' => $request->getPhone(),
+            'email'=> $request->getEmail(),
+            'company_id' => $request->getCompanyId(),
         ];
+
+        dd($data);
 
         $employee->update($data, [$employee->id]);
 

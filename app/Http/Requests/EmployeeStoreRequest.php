@@ -27,7 +27,9 @@ class EmployeeStoreRequest extends FormRequest
             'firstName'=>'required',
             'lastName' => 'required',
             'website' => 'required',
+            'phone' => 'required',
             'email' => 'required',
+            'company_id' => 'required',
         ];
     }
 
@@ -58,16 +60,25 @@ class EmployeeStoreRequest extends FormRequest
     /**
      * @return null|string
      */
+    public function getPhone(): ? string
+    {
+        return $this->input('phone');
+    }
+
+    /**
+     * @return null|string
+     */
     public function getEmail(): ? string
     {
         return $this->input('email');
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getCompany(): string
+    public function getCompanyId(): int
     {
-        return $this->input('company');
+        return $this->input('company_id');
     }
+
 }
