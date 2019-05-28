@@ -8,6 +8,11 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 
-Route::get('/home', 'CompanyController@index')->name('home');
-Route::resource('company', 'CompanyController');
-Route::resource('employee', 'EmployeeController');
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'CompanyController@index')->name('home');
+    Route::resource('company', 'CompanyController');
+    Route::resource('employee', 'EmployeeController');
+
+});
