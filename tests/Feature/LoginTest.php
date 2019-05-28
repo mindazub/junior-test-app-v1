@@ -2,17 +2,14 @@
 
 namespace Tests\Feature;
 
-use App\Company;
-use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
 {
 
     use DatabaseMigrations;
+
     /** @test */
     public function test_user_can_view_a_login_form()
     {

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a5de24d-d150-43fd-86ae-fa6d2e2912e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/LoginTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/LoginTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,10 +21,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/Feature/LoginTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="57">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding>
-                <element signature="e#33#49#0#PHP" expanded="true" />
+                <element signature="e#33#86#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -329,12 +327,12 @@
       <workItem from="1558864191898" duration="10890000" />
       <workItem from="1558895748131" duration="6415000" />
       <workItem from="1558947967829" duration="12949000" />
-      <workItem from="1559023510866" duration="1659000" />
+      <workItem from="1559023510866" duration="1805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54959000" />
+    <option name="totallyTimeSpent" value="55105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="766" y="23" width="1761" height="1313" extended-state="0" />
@@ -694,10 +692,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/Feature/LoginTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="57">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
           <folding>
-            <element signature="e#33#49#0#PHP" expanded="true" />
+            <element signature="e#33#86#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
