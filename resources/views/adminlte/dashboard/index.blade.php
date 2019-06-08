@@ -2,6 +2,7 @@
 
 @section('content')
 
+    <h1>DASHBOARD INDEX</h1>
 
 @stop
 

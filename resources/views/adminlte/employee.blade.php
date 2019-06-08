@@ -27,6 +27,7 @@
             var table = $('#employee-table').DataTable({
                 processing: true,
                 serverSide: true,
+
                 ajax: "{{ route('employee.data') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},

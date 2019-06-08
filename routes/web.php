@@ -16,7 +16,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('employee', 'EmployeeController');
 
     Route::group(['prefix' => 'dashboard'], function() {
-        Route::get('/', 'DashboardController@index')->name('datatables.data');
+        Route::get('/', 'DashboardController@index')->name('dashboard.data');
+        Route::get('users', 'DashboardController@users')->name('users.data');
         Route::get('employee', 'DashboardController@employee')->name('employee.data');
         Route::get('company', 'DashboardController@company')->name('company.data');
     });

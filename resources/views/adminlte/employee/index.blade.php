@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
     <table class="table table-bordered" id="employee-table">
         <thead>
         <tr>
@@ -17,6 +18,7 @@
         </tr>
         </thead>
     </table>
+
 @stop
 
 @push('scripts')
@@ -27,6 +29,10 @@
             var table = $('#employee-table').DataTable({
                 processing: true,
                 serverSide: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'excel', 'pdf', 'csv', 'print'
+                ],
                 ajax: "{{ route('employee.data') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
@@ -44,4 +50,7 @@
 
         });
     </script>
+
 @endpush
+
+

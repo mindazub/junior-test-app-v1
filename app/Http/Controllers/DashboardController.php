@@ -10,6 +10,12 @@ use Yajra\DataTables\DataTables;
 
 class DashboardController extends Controller
 {
+
+    public function index()
+    {
+        return view('adminlte.dashboard.index');
+    }
+    
     /**
      * Displays datatables front end view
      *
@@ -17,7 +23,7 @@ class DashboardController extends Controller
      * @return \Illuminate\View\View
      * @throws \Exception
      */
-    public function index(Request $request)
+    public function users(Request $request)
     {
         if ($request->ajax()) {
             $data = User::latest()->get();
@@ -33,7 +39,7 @@ class DashboardController extends Controller
                 ->make(true);
         }
 
-        return view('adminlte.index');
+        return view('adminlte.user.index');
     }
 
 

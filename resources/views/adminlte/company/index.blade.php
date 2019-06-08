@@ -25,6 +25,10 @@
             var table = $('#company-table').DataTable({
                 processing: true,
                 serverSide: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'excel', 'pdf', 'csv', 'print'
+                ],
                 ajax: "{{ route('company.data') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
