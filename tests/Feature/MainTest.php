@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-class LoginTest extends TestCase
+class MainTest extends TestCase
 {
 
     use DatabaseMigrations;
@@ -38,8 +38,6 @@ class LoginTest extends TestCase
         $response = $this->get('/employee');
         $response->assertSee($employee->name);
     }
-
-
 
     /** @test */
     public function test_an_authenticated_user_can_see_companies()
