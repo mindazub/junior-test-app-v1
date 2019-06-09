@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\View\View;
 
 class SearchController extends Controller
 {
-    public function searchCompany()
+    /**
+     * @return View
+     */
+    public function searchCompany(): View
     {
         $q = Input::get ( 'q' );
         $companies = Company::where([
@@ -17,4 +22,19 @@ class SearchController extends Controller
 
         return view('company.index', compact('companies', 'q'));
     }
+
+    /**
+     * @return View
+     */
+    public function searchEmployee(): View
+    {
+        $q = Input::get ( 'q' );
+        $employees = Employee::where([
+            ['firstName', 'LIKE', '%' . $q . '%'],
+            ['lastName', 'LIKE', '%' . $q . '%'],
+        ])->paginate();
+
+        return view('employee.index', compact('employees', 'q'));
+    }
+
 }
