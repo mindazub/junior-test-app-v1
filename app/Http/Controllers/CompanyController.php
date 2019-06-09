@@ -21,7 +21,7 @@ class CompanyController extends Controller
     {
         $companies = Company::paginate(10);
 
-        return View('home', compact('companies'));
+        return View('company.index', compact('companies'));
     }
 
     /**
@@ -129,4 +129,5 @@ class CompanyController extends Controller
                 ->with('error', $exception->getMessage());
         }
     }
+
 }

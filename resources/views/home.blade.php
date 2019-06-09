@@ -28,7 +28,6 @@
                                 <th>Options</th>
                             </tr>
 
-
                             @foreach($companies as $company)
                                 <tr>
                                     @if($company->logo == 'logo')

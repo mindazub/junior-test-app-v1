@@ -39,21 +39,10 @@
 
             <li class="header">DATATABLES</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{ url('dashboard/users') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-            <li><a href="{{ url('dashboard/employee') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
-            <li><a href="{{ url('dashboard/company') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
+            <li><a href="{{ url('dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="{{ url('dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
+            <li><a href="{{ url('dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
-{{--            <li class="treeview">--}}
-{{--                <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>--}}
-{{--                    <span class="pull-right-container">--}}
-{{--                <i class="fa fa-angle-left pull-right"></i>--}}
-{{--              </span>--}}
-{{--                </a>--}}
-{{--                <ul class="treeview-menu">--}}
-{{--                    <li><a href="#">Link in level 2</a></li>--}}
-{{--                    <li><a href="#">Link in level 2</a></li>--}}
-{{--                </ul>--}}
-{{--            </li>--}}
         </ul>
         <!-- /.sidebar-menu -->
     </section>
