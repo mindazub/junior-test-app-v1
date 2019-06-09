@@ -8,11 +8,7 @@
                     <div class="card-header">Create New Company</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+
 
                         <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
 

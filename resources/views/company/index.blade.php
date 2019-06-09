@@ -4,9 +4,9 @@
 
     <div class="col-xs-12">
         @if($companies->count())
-            <div class="box">
+            <div class="box my-box">
                 <div class="box-header">
-                    <h1 class="box-title">Company Table</h1>
+                    <h2 class="box-title">Company Table</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('company.create') }}">{{ __('Add Company') }}</a></span>
 
                     @if(isset($q))
                     <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('company.index') }}">back</a></span>
@@ -72,11 +72,11 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer clearfix">
+                    <div class="box-footer clearfix" style="background-color: #d2d6de;">
 
-                    {{ $companies->links() }}
+                        {{ $companies->links() }}
 
-                </div>
+                    </div>
                 <!-- /. box-footer -->
             </div>
             <!-- /.box -->

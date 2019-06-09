@@ -49,6 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Datatable buttons CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
 
+    <link rel="stylesheet" href="/css/my-css.css">
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -261,6 +262,8 @@ desired effect
 
         <!-- Main content -->
         <section class="content container">
+
+            @include('layouts.partials.message-success')
 
             @yield('content')
 
