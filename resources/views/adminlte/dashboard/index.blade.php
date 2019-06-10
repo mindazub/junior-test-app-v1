@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>DASHBOARD INDEX</h1>
+    @include('adminlte.dashboard.partials.boxes')
 
 @stop
 

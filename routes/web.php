@@ -18,7 +18,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('employee', 'EmployeeController');
         Route::resource('user', 'UserController');
         Route::get('/', 'DashboardController@index')->name('dashboard.data');
-        Route::get('settings', 'DashboardController@settings')->name('dashboard.settings');
         Route::get('users-datatable', 'DashboardController@users')->name('users.data');
         Route::get('employee-datatable', 'DashboardController@employee')->name('employee.data');
         Route::get('company-datatable', 'DashboardController@company')->name('company.data');

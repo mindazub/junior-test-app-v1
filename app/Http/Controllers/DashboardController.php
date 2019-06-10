@@ -13,7 +13,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('adminlte.dashboard.index');
+        $users = User::all();
+        $employees = Employee::all();
+        $companies = Company::all();
+
+        return view('adminlte.dashboard.index', compact('users', 'employees', 'companies'));
     }
     
     /**
