@@ -43,6 +43,23 @@
             <li><a href="{{ url('dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
             <li><a href="{{ url('dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
+            <li class="header">CONTROL</li>
+            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>
+            <li>
+
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out"></i>
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+
+            </li>
+
         </ul>
         <!-- /.sidebar-menu -->
     </section>

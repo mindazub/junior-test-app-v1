@@ -96,5 +96,14 @@ class DashboardController extends Controller
         return view('adminlte.company.index');
     }
 
+    /**
+     * Displays Settings front end view
+     *
+     * @return \Illuminate\View\View
+     */
+    public function settings()
+    {
+        return view('adminlte.dashboard.settings');
+    }
 
 }
