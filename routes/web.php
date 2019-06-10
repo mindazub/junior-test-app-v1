@@ -25,5 +25,6 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::post('/searchCompany', 'SearchController@searchCompany')->name('search.company');
         Route::post('/searchEmployee', 'SearchController@searchEmployee')->name('search.employee');
+        Route::post('/searchUser', 'SearchController@searchUser')->name('search.user');
     });
 });

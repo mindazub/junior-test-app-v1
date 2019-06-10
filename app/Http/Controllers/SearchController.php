@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Company;
 use App\Employee;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\View\View;
@@ -35,6 +36,19 @@ class SearchController extends Controller
         ])->paginate();
 
         return view('employee.index', compact('employees', 'q'));
+    }
+
+    /**
+     * @return View
+     */
+    public function searchUser(): View
+    {
+        $q = Input::get ( 'q' );
+        $users = User::where([
+            ['name', 'LIKE', '%' . $q . '%'],
+        ])->paginate();
+
+        return view('user.index', compact('users', 'q'));
     }
 
 }

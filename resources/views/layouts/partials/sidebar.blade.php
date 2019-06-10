@@ -33,7 +33,7 @@
 
             <li class="header">SIMPLE TABLES</li>
 
-            <li><a href="{{ url('dashboard/users') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="{{ url('dashboard/user') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
             <li><a href="{{ url('dashboard/employee') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
             <li><a href="{{ url('dashboard/company') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
@@ -44,7 +44,7 @@
             <li><a href="{{ url('dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
             <li class="header">CONTROL</li>
-            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>
+{{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}
             <li>
 
                 <a href="{{ route('logout') }}"
