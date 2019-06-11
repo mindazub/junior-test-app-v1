@@ -14,9 +14,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'CompanyController@index')->name('home');
 
     Route::group(['prefix' => 'dashboard'], function() {
-        Route::resource('company', 'CompanyController');
-        Route::resource('employee', 'EmployeeController');
-        Route::resource('user', 'UserController');
         Route::get('/', 'DashboardController@index')->name('dashboard.data');
         Route::get('users-datatable', 'DashboardController@users')->name('users.data');
         Route::get('employee-datatable', 'DashboardController@employee')->name('employee.data');
@@ -25,5 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/searchCompany', 'SearchController@searchCompany')->name('search.company');
         Route::post('/searchEmployee', 'SearchController@searchEmployee')->name('search.employee');
         Route::post('/searchUser', 'SearchController@searchUser')->name('search.user');
+
+        Route::resource('company', 'CompanyController');
+        Route::resource('employee', 'EmployeeController');
+        Route::resource('user', 'UserController');
     });
 });
