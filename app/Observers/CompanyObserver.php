@@ -2,7 +2,11 @@
 
 namespace App\Observers;
 
+use App\User;
 use App\Company;
+use App\Notifications\NewCompanyCreatedNotification;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
 
 class CompanyObserver
 {
@@ -15,6 +19,10 @@ class CompanyObserver
     public function created(Company $company)
     {
         info('Company created: ' . $company->name);
+//        $this->notify(new NewCompanyCreatedNotification($company));
+
+        $company->notify(new NewCompanyCreatedNotification($company));
+        info('notified');
     }
 
     /**

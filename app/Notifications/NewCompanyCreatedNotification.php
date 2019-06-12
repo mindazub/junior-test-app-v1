@@ -14,10 +14,11 @@ class NewCompanyCreatedNotification extends Notification
 
 
     private $company;
+
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param Company $company
      */
     public function __construct(Company $company)
     {
@@ -44,7 +45,7 @@ class NewCompanyCreatedNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The NEW company were created: ' . $this->company->name )
+                    ->line('The NEW Company were created: ' . $this->company->name )
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }

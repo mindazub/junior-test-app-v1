@@ -118,6 +118,7 @@ desired effect
         <section class="content container">
 
             @include('layouts.partials.message-success')
+            @include('layouts.partials.message-danger')
 
             @yield('content')
 

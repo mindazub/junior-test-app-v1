@@ -50,20 +50,19 @@ class CompanyController extends Controller
             'logo' => $request->getLogo()? $request->getLogo()->store(self::COVER_DIRECTORY) : null,
         ];
 
+
         try {
             $company = Company::create($data);
             return redirect()
                 ->route('company.index')
                 ->with('status', 'Company created successfully!');
+        dd($data);
         } catch (\Throwable $exception) {
             return redirect()
                 ->back()
                 ->with('error', $exception->getMessage());
         }
 
-        return redirect()
-            ->route('company.index')
-            ->with('status', 'Company created successfully!');
     }
 
 
