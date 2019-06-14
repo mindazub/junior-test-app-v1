@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a5de24d-d150-43fd-86ae-fa6d2e2912e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/partials/message-danger.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CompanyStoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CompanyStoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/NewCompanyCreatedNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/NewCompanyCreatedNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/CompanyObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/CompanyObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Company.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="44">
+              <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding>
                 <element signature="e#23#62#0#PHP" expanded="true" />
               </folding>
@@ -295,7 +288,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="958" />
-    <option name="y" value="30" />
+    <option name="y" value="25" />
     <option name="width" value="1581" />
     <option name="height" value="1311" />
   </component>
@@ -405,7 +398,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts/partials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -468,12 +461,12 @@
       <workItem from="1559990196819" duration="3908000" />
       <workItem from="1559995073730" duration="18372000" />
       <workItem from="1560145584119" duration="8933000" />
-      <workItem from="1560172359983" duration="5159000" />
+      <workItem from="1560172359983" duration="5537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101465000" />
+    <option name="totallyTimeSpent" value="101843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="958" y="30" width="1581" height="1311" extended-state="0" />
@@ -905,8 +898,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Company.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="44">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding>
             <element signature="e#23#62#0#PHP" expanded="true" />
           </folding>
