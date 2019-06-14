@@ -30,10 +30,12 @@ class SearchController extends Controller
     public function searchEmployee(): View
     {
         $q = Input::get ( 'q' );
+
         $employees = Employee::where([
             ['firstName', 'LIKE', '%' . $q . '%'],
-            ['lastName', 'LIKE', '%' . $q . '%'],
-        ])->paginate();
+        ])->orWhere([
+            ['lastName', 'LIKE', '%' . $q . '%']
+    ])->paginate();
 
         return view('employee.index', compact('employees', 'q'));
     }

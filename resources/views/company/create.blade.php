@@ -10,7 +10,7 @@
                     <div class="card-body">
 
 
-                        <form action="{{ route('company.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('company.store', app()->getLocale()) }}" method="post" enctype="multipart/form-data">
 
                             {{ csrf_field() }}
 

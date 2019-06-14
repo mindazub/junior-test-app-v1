@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('employee.update', [$employee->id]) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('employee.update', [app()->getLocale(), $employee->id]) }}" method="post" enctype="multipart/form-data">
 
                             {{ method_field('put') }}
 

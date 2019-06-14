@@ -33,7 +33,7 @@
                 buttons: [
                     'copy', 'excel', 'pdf', 'csv', 'print'
                 ],
-                ajax: "{{ route('employee.data') }}",
+                ajax: "{{ route('employee.data', app()->getLocale()) }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'firstName', name: 'firstName'},

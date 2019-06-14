@@ -9,11 +9,11 @@
                     <h2 class="box-title">Users Table</h2>
 
                     @if(isset($q))
-                        <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('user.index') }}">back</a></span>
+                        <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('user.index', app()->getLocale()) }}">back</a></span>
                     @endif
 
                     <div class="box-tools">
-                        <form class="input-group-btn input-group-sm" style="width: 250px;" action="{{ route('search.user') }}" method="POST" role="search">
+                        <form class="input-group-btn input-group-sm" style="width: 250px;" action="{{ route('search.user', app()->getLocale()) }}" method="POST" role="search">
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <input type="text" class="form-control pull-right" name="q"
@@ -43,7 +43,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                    <form action="{{ route('user.destroy', [$user->id]) }}" method="post">
+                                    <form action="{{ route('user.destroy', [app()->getLocale(), $user->id]) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <input class="btn btn-sm btn-danger" type="submit"

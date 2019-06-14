@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('employee.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('employee.store', app()->getLocale()) }}" method="post" enctype="multipart/form-data">
 
                             {{ csrf_field() }}
 

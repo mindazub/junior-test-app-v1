@@ -29,7 +29,7 @@
                 buttons: [
                     'copy', 'excel', 'pdf', 'csv', 'print'
                 ],
-                ajax: "{{ route('company.data') }}",
+                ajax: "{{ route('company.data', app()->getLocale()) }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},

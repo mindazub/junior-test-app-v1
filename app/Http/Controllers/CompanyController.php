@@ -54,27 +54,14 @@ class CompanyController extends Controller
         try {
             $company = Company::create($data);
             return redirect()
-                ->route('company.index')
+                ->route('company.index', app()->getLocale())
                 ->with('status', 'Company created successfully!');
-        dd($data);
         } catch (\Throwable $exception) {
             return redirect()
                 ->back()
                 ->with('error', $exception->getMessage());
         }
 
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Company  $company
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Company $company)
-    {
-        //
     }
 
     /**
@@ -86,7 +73,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company): View
     {
-        return view('company.edit', compact('company'));
+        return view('company.edit', compact('company_id'));
     }
 
 
@@ -110,7 +97,7 @@ class CompanyController extends Controller
         }
 
 
-        $company->update($data, [$company->id]);
+        $company->update($data, [app()->getLocale(), $company->id]);
 
         return redirect()
             ->route('home')

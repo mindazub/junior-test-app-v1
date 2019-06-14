@@ -56,7 +56,7 @@ class EmployeeController extends Controller
         $employee = Employee::create($data);
 
         return redirect()
-            ->route('employee.index')
+            ->route('employee.index', app()->getLocale())
             ->with('status', 'Employee created successfully!');
     }
 

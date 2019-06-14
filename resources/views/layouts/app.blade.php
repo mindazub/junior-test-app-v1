@@ -106,7 +106,7 @@
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->
-                            <a href="{{ route('login') }}" >
+                            <a href="{{ route('login', app()->getLocale()) }}" >
                                 <!-- The user image in the navbar-->
                                 <img src="/dist/img/usermale.png" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->

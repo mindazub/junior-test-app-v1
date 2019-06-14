@@ -33,28 +33,28 @@
 
             <li class="header">SIMPLE TABLES</li>
 
-            <li><a href="{{ url('dashboard/user') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-            <li><a href="{{ url('dashboard/employee') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
-            <li><a href="{{ url('dashboard/company') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/user') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/employee') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/company') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
             <li class="header">DATATABLES</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{ url('dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-            <li><a href="{{ url('dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
-            <li><a href="{{ url('dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
 
             <li class="header">CONTROL</li>
 {{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}
             <li>
 
-                <a href="{{ route('logout') }}"
+                <a href="{{ route('logout', app()->getLocale()) }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out"></i>
                     {{ __('Logout') }}
                 </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
                     @csrf
                 </form>
 
