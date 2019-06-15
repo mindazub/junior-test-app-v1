@@ -67,13 +67,13 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Company $company
+     * @param int $id
      * @return View
-     * @throws \Exception
      */
-    public function edit(Company $company): View
+    public function edit($id): View
     {
-        return view('company.edit', compact('company_id'));
+        $company = Company::findorFail($id)->get();
+        return view('company.edit', compact('company', 'id'));
     }
 
 
@@ -95,7 +95,6 @@ class CompanyController extends Controller
         if($request->getLogo()) {
             $data['logo'] = $request->getLogo()->store(self::COVER_DIRECTORY);
         }
-
 
         $company->update($data, [app()->getLocale(), $company->id]);
 

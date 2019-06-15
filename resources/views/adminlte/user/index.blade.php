@@ -27,7 +27,7 @@
                 buttons: [
                     'copy', 'excel', 'pdf', 'csv', 'print'
                 ],
-                ajax: "{{ route('users.data') }}",
+                ajax: "{{ route('users.data', app()->getLocale()) }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},

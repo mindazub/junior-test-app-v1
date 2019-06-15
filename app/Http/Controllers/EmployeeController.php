@@ -53,11 +53,16 @@ class EmployeeController extends Controller
             'company_id' => $request->getCompanyId(),
         ];
 
-        $employee = Employee::create($data);
-
-        return redirect()
-            ->route('employee.index', app()->getLocale())
-            ->with('status', 'Employee created successfully!');
+        try{
+            $employee = Employee::create($data);
+            return redirect()
+                ->route('employee.index', app()->getLocale())
+                ->with('status', 'Employee created successfully!');
+        } catch(\Throwable $exception) {
+            return redirect()
+                ->back()
+                ->with('error', $exception->getMessage());
+        }
     }
 
 
