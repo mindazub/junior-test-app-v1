@@ -103,6 +103,22 @@
                     <ul class="nav navbar-nav">
 
 
+                        <!-- Navbar Right Menu -->
+                        <div class="navbar-custom-menu">
+
+                            <ul class="nav navbar-nav">
+                                @foreach(config('app.available_locales') as $locale)
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           @if(app()->getLocale() == $locale) style="text-decoration: underline; font-weight: bold; background-color: darkorange;" @endif
+                                           href="#">{{ strtoupper($locale) }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+
+
                         <!-- User Account Menu -->
                         <li class="dropdown user user-menu">
                             <!-- Menu Toggle Button -->

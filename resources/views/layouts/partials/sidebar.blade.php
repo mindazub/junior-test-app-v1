@@ -12,7 +12,7 @@
             <div class="pull-left info">
                 <p>{{ auth()->user()->name }}</p>
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> {{ __('Online') }}</a>
             </div>
         </div>
 
@@ -31,19 +31,19 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu" data-widget="tree">
 
-            <li class="header">SIMPLE TABLES</li>
+            <li class="header">{{ __('SIMPLE TABLES') }}</li>
 
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/user') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/employee') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/company') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/user') }}"><i class="fa fa-link"></i> <span>{{ __('Users') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/employee') }}"><i class="fa fa-link"></i> <span>{{ __('Employees') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/company') }}"><i class="fa fa-link"></i> <span>{{ __('Companies') }}</span></a></li>
 
-            <li class="header">DATATABLES</li>
+            <li class="header">{{ __('DATATABLES') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>Users</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>Employees</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>Companies</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Users') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Employees') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Companies') }}</span></a></li>
 
-            <li class="header">CONTROL</li>
+            <li class="header">{{ __('CONTROL') }}</li>
 {{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}
             <li>
 

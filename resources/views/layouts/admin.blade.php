@@ -94,7 +94,18 @@ desired effect
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
 
+                <ul class="nav navbar-nav">
+                    @foreach(config('app.available_locales') as $locale)
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               @if(app()->getLocale() == $locale) style="text-decoration: underline; font-weight: bold; background-color: darkorange;" @endif
+                               href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}">{{ strtoupper($locale) }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+
             </div>
+
         </nav>
     </header>
 
@@ -105,8 +116,8 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Dashboard of Junior Test Admin panel
-                <small>created by mindazub</small>
+                {{ __('Dashboard') }}
+                <small>{{ __('created by mindazub') }}</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -131,7 +142,7 @@ desired effect
     <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-            Only the best code!
+            {{ __('Only the best code!') }}
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; 2019 <a href="#">mindazub</a>.</strong> All rights reserved.

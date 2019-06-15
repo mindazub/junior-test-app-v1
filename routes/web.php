@@ -5,8 +5,8 @@ Route::get('/', function() {
 });
 
 
-
-Route::group(['prefix' => '{locale}',
+Route::group([
+    'prefix' => '{locale}',
     'where' => ['locale' => '[a-zA-Z]{2}'],
     'middleware' => 'setLocale',
 ], function() {
