@@ -14,7 +14,8 @@ $factory->define(Employee::class, function (Faker $faker) {
 //        'company_id' => function () {
 //            return factory(Company::class)->create()->id;
 //        },
-        'email' => $faker->email,
-        'phone' => $faker->phoneNumber,
+        'website' => $faker->domainName,
+        'email' => $faker->safeEmail,
+        'phone' => $faker->phoneNumber
     ];
 });

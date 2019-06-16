@@ -4,7 +4,7 @@
 
     <div class="col-xs-12">
         @if($users->count())
-            <div class="box my-box">
+            <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
                     <h2 class="box-title">Users Table</h2>
 
@@ -57,7 +57,7 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer clearfix" style="background-color: #d2d6de;">
+                <div class="box-footer clearfix" style="background-color: #ecf0f5;">
 
                     {{ $users->links() }}
 

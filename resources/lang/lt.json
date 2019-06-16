@@ -8,5 +8,15 @@
     "Companies": "Įmonės",
     "Logout": "Atsijungti",
     "Only the best code!": "Pats geriausias kodas!",
-    "Online": "Prisijungęs"
+    "Online": "Prisijungęs",
+    "Employee Table": "Darbuotojų lentelė",
+    "Add Employee": "Sukurti darbuotoją",
+    "Search for employees": "Ieškoti darbuotojo šioje DB",
+    "First Name": "Vardas",
+    "Last Name": "Pavardė",
+    "Website": "Pusl intern",
+    "Phone": "Telefonas",
+    "Email": "El paštas",
+    "Company ID": "Įmonės ID",
+    "Options": "Veiksmai"
 }

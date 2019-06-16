@@ -17,7 +17,7 @@ Project start:
 
 - change DB name and password in .env file
 
-- configure EMAIL credentials in .env
+- configure EMAIL credentials in .env file
 
 - php artisan key:generate
 

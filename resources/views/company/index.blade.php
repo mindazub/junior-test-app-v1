@@ -4,7 +4,7 @@
 
     <div class="col-xs-12">
         @if($companies->count())
-            <div class="box my-box">
+            <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
                     <h2 class="box-title">Company Table</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('company.create', app()->getLocale()) }}">{{ __('Add Company') }}</a></span>
 
@@ -72,7 +72,7 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                    <div class="box-footer clearfix" style="background-color: #d2d6de;">
+                    <div class="box-footer clearfix" style="background-color: #ecf0f5;">
 
                         {{ $companies->links() }}
 

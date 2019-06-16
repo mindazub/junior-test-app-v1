@@ -4,9 +4,9 @@
 
     <div class="col-xs-12">
         @if($employees->count())
-            <div class="box my-box">
+            <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
-                    <h2 class="box-title">Employee Table</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('employee.create', app()->getLocale()) }}">{{ __('Add Employee') }}</a></span>
+                    <h2 class="box-title">{{ __('Employee Table') }}</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('employee.create', app()->getLocale()) }}">{{ __('Add Employee') }}</a></span>
 
                     @if(isset($q))
                         <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('employee.index', app()->getLocale()) }}">back</a></span>
@@ -17,7 +17,7 @@
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <input type="text" class="form-control pull-right" name="q"
-                                       placeholder="Search for employees">
+                                       placeholder="{{ __('Search for employees') }}">
                                 <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
                                             <span class="glyphicon glyphicon-search"></span>
@@ -29,16 +29,16 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table class="table table-hover" >
                         <tbody><tr>
                             <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Website</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Company ID</th>
-                            <th>Options</th>
+                            <th>{{ __('First Name') }}</th>
+                            <th>{{ __('Last Name') }}</th>
+                            <th>{{ __('Website') }}</th>
+                            <th>{{ __('Phone') }}</th>
+                            <th>{{ __('Email') }}</th>
+                            <th>{{ __('Company ID') }}</th>
+                            <th>{{ __('Options') }}</th>
                         </tr>
 
                         @foreach($employees as $employee)
@@ -70,7 +70,7 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer clearfix" style="background-color: #d2d6de;">
+                <div class="box-footer clearfix" style="background-color: #ecf0f5;">
 
                     {{ $employees->links() }}
 
