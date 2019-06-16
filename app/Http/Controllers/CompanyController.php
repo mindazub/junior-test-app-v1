@@ -67,13 +67,14 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param $locale
+     * @param Company $company
      * @return View
      */
-    public function edit($id): View
+
+    public function edit($locale, Company $company): View
     {
-        $company = Company::findorFail($id)->get();
-        return view('company.edit', compact('company', 'id'));
+        return view('company.edit', compact('locale', 'company'));
     }
 
 
