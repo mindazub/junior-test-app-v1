@@ -17,6 +17,8 @@ Project start:
 
 - change DB name and password in .env file
 
+- configure EMAIL credentials in .env
+
 - php artisan key:generate
 
 - php artisan storage:link
@@ -26,6 +28,7 @@ Project start:
 - FILESYSTEM_DRIVER=public
 
 - php artisan migrate
+
 
 - php artisan db:seed
 

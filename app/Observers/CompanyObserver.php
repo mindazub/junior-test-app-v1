@@ -19,9 +19,8 @@ class CompanyObserver
     public function created(Company $company)
     {
         info('Company created: ' . $company->name);
-//        $this->notify(new NewCompanyCreatedNotification($company));
 
-        $company->notify(new NewCompanyCreatedNotification($company));
+//        $company->notify(new NewCompanyCreatedNotification($company));
         info('notified');
     }
 

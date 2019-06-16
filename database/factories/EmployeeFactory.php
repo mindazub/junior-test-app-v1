@@ -10,9 +10,10 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
         'firstName' => $faker->firstName,
         'lastName' => $faker->lastName,
-        'company_id' => function () {
-            return factory(Company::class)->create()->id;
-        },
+        'company_id' => $faker->randomDigit(1, 10),
+//        'company_id' => function () {
+//            return factory(Company::class)->create()->id;
+//        },
         'email' => $faker->email,
         'phone' => $faker->phoneNumber,
     ];
