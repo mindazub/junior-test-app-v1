@@ -53,11 +53,11 @@
                                 <td>{{ $company->email }}</td>
                                 <td>{{ $company->website }}</td>
                                 <td>
-                                    <a href="{{ route('company.edit', [app()->getLocale(), $company->id]) }}"
+                                    <a href="{{ route('company.edit', [app()->getLocale(), $company]) }}"
                                        class="btn btn-sm btn-info">{{ __('Edit') }}</a>
                                     <br>
 
-                                    <form action="{{ route('company.destroy', [app()->getLocale(), $company->id]) }}" method="post">
+                                    <form action="{{ route('company.destroy', [app()->getLocale(), $company]) }}" method="post">
                                         {{ csrf_field() }}
                                         {{ method_field('delete') }}
                                         <input class="btn btn-sm btn-danger" type="submit"

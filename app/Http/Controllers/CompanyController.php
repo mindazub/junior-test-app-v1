@@ -67,25 +67,25 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $locale
      * @param Company $company
      * @return View
      */
 
     public function edit($locale, Company $company): View
     {
-        return view('company.edit', compact('locale', 'company'));
+        return view('company.edit', compact('locale','company'));
     }
 
 
     /**
      * Update the specified resource in storage.
      *
+     * @param $locale
      * @param CompanyUpdateRequest $request
      * @param Company $company
      * @return RedirectResponse
      */
-    public function update(CompanyUpdateRequest $request, Company $company):RedirectResponse
+    public function update($locale, CompanyUpdateRequest $request, Company $company):RedirectResponse
     {
         $data = [
             'name' => $request->getName(),
@@ -100,18 +100,19 @@ class CompanyController extends Controller
         $company->update($data, [app()->getLocale(), $company->id]);
 
         return redirect()
-            ->route('home')
+            ->route('home', $locale)
             ->with('status', 'Company updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param $locale
      * @param Company $company
      * @return RedirectResponse|void
      * @internal param int $id
      */
-    public function destroy(Company $company): RedirectResponse
+    public function destroy($locale, Company $company): RedirectResponse
     {
         try {
             $company->delete();

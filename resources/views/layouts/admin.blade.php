@@ -99,7 +99,7 @@ desired effect
                         <li class="nav-item">
                             <a class="nav-link"
                                @if(app()->getLocale() == $locale) style="text-decoration: underline; font-weight: bold; background-color: darkorange;" @endif
-                               href="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), $locale) }}">{{ strtoupper($locale) }}</a>
+                               href="{{ route('home', $locale) }}">{{ strtoupper($locale) }}</a>
                         </li>
                     @endforeach
                 </ul>
