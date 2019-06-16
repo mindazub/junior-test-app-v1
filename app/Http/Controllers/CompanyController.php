@@ -67,6 +67,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param $locale
      * @param Company $company
      * @return View
      */

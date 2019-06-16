@@ -69,25 +69,25 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param $locale
      * @param Employee $employee
      * @return View
-     * @throws \Exception
      */
-    public function edit(Employee $employee): View
+    public function edit($locale, Employee $employee): View
     {
         $companies = Company::all();
-
-        return view('employee.edit', compact('employee', 'companies'));
+        return view('employee.edit', compact('locale', 'employee', 'companies'));
     }
 
     /**
      * Update the specified resource in storage.
      *
+     * @param $locale
      * @param EmployeeUpdateRequest $request
      * @param Employee $employee
      * @return RedirectResponse
      */
-    public function update(EmployeeUpdateRequest $request, Employee $employee): RedirectResponse
+    public function update($locale, EmployeeUpdateRequest $request, Employee $employee): RedirectResponse
     {
 
         $data = [
@@ -99,20 +99,22 @@ class EmployeeController extends Controller
             'company_id' => $request->getCompanyId(),
         ];
 
-        $employee->update($data, [$employee->id]);
+        $employee->update($data, [app()->getLocale(), $employee->id]);
 
         return redirect()
-            ->route('employee.index')
+            ->route('employee.index', $locale)
             ->with('status', 'Employee updated successfully!');
     }
+
     /**
      * Remove the specified resource from storage.
      *
+     * @param $locale
      * @param Employee $employee
      * @return RedirectResponse|void
      * @internal param int $id
      */
-    public function destroy(Employee $employee): RedirectResponse
+    public function destroy($locale, Employee $employee): RedirectResponse
     {
         try {
             $employee->delete();

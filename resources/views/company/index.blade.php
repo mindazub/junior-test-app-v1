@@ -83,7 +83,7 @@
         @else
             <div class="box">
                 <div class="box-header">
-                    <h1>No items found, please try again press <a href="{{ route('company.index', app()->getLocale()) }}">back</a></h1>
+                    <h1>No items found, please <a href="{{ route('company.create', app()->getLocale()) }}">Create a Company</a></h1>
                 </div>
             </div>
         @endif
