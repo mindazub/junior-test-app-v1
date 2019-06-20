@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/en/dashboard';
 
     /**
      * Create a new controller instance.
@@ -41,6 +41,6 @@ class LoginController extends Controller
      * @return string
      */
     public function redirectTo() {
-        return app()->getLocale() .'/home';
+        return app()->getLocale() .'/dashboard';
     }
 }
