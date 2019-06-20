@@ -13,7 +13,7 @@ class MainTest extends TestCase
     /** @test */
     public function test_user_can_view_a_login_form()
     {
-        $response = $this->get('/login');
+        $response = $this->get('/en/login');
         $response->assertSuccessful();
         $response->assertViewIs('auth.login');
     }
@@ -21,7 +21,7 @@ class MainTest extends TestCase
     /** @test */
     public function test_register_page_not_found()
     {
-        $response = $this->get('/register');
+        $response = $this->get('/en/register');
         $response->assertNotFound();
         $response->assertStatus(404);
     }
@@ -35,7 +35,7 @@ class MainTest extends TestCase
         ]));
 
         $employee = factory('App\Employee')->create();
-        $response = $this->get('/employee');
+        $response = $this->get('/en/dashboard/employee');
         $response->assertSee($employee->name);
     }
 
@@ -48,7 +48,7 @@ class MainTest extends TestCase
         ]));
 
         $company = factory('App\Company')->create();
-        $response = $this->get('/company');
+        $response = $this->get('/en/dashboard/company');
         $response->assertSee($company->name);
     }
 
