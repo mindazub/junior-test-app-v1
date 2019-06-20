@@ -6,7 +6,7 @@
         @if($companies->count())
             <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
-                    <h2 class="box-title">Company Table</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('company.create', app()->getLocale()) }}">{{ __('Add Company') }}</a></span>
+                    <h2 class="box-title">{{ __('Company Table') }}</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('company.create', app()->getLocale()) }}">{{ __('Add Company') }}</a></span>
 
                     @if(isset($q))
                     <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('company.index', app()->getLocale()) }}">back</a></span>
@@ -17,7 +17,7 @@
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <input type="text" class="form-control pull-right" name="q"
-                                       placeholder="Search for companies">
+                                       placeholder="{{ __('Search for companies') }}">
                                 <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
                                             <span class="glyphicon glyphicon-search"></span>
@@ -34,10 +34,10 @@
                         <tbody><tr>
                             <th>ID</th>
                             <th>Logo</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Website</th>
-                            <th>Options</th>
+                            <th>{{ __('Name') }}</th>
+                            <th>{{ __('Email') }}</th>
+                            <th>{{ __('Website') }}</th>
+                            <th>{{ __('Options') }}</th>
                         </tr>
 
                         @foreach($companies as $company)

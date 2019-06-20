@@ -6,7 +6,7 @@
         @if($users->count())
             <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
-                    <h2 class="box-title">Users Table</h2>
+                    <h2 class="box-title">{{ __('Users Table') }}</h2>
 
                     @if(isset($q))
                         <h3>Search results for: <span>"{{ $q }}"</span></h3> Go <span><a href="{{ route('user.index', app()->getLocale()) }}">back</a></span>
@@ -17,7 +17,7 @@
                             {{ csrf_field() }}
                             <div class="input-group">
                                 <input type="text" class="form-control pull-right" name="q"
-                                       placeholder="Search for users">
+                                       placeholder="{{ __('Search for users') }}">
                                 <span class="input-group-btn">
                                         <button type="submit" class="btn btn-default">
                                             <span class="glyphicon glyphicon-search"></span>
