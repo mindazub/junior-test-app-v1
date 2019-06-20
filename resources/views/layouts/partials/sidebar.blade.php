@@ -33,15 +33,15 @@
 
             <li class="header">{{ __('SIMPLE TABLES') }}</li>
 
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/user') }}"><i class="fa fa-link"></i> <span>{{ __('Users') }}</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/employee') }}"><i class="fa fa-link"></i> <span>{{ __('Employees') }}</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/dashboard/company') }}"><i class="fa fa-link"></i> <span>{{ __('Companies') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/user') }}"><i class="fa fa-user"></i> <span>{{ __('Users') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/employee') }}"><i class="fa fa-address-book"></i> <span>{{ __('Employees') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/dashboard/company') }}"><i class="fa fa-columns"></i> <span>{{ __('Companies') }}</span></a></li>
 
             <li class="header">{{ __('DATATABLES') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/users-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Users') }}</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/employee-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Employees') }}</span></a></li>
-            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/company-datatable') }}"><i class="fa fa-link"></i> <span>{{ __('Companies') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/users-datatable') }}"><i class="fa fa-user"></i> <span>{{ __('Users') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/employee-datatable') }}"><i class="fa fa-address-book"></i> <span>{{ __('Employees') }}</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/company-datatable') }}"><i class="fa fa-columns"></i> <span>{{ __('Companies') }}</span></a></li>
 
             <li class="header">{{ __('CONTROL') }}</li>
 {{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}
@@ -51,7 +51,7 @@
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out"></i>
-                    {{ __('Logout') }}
+                    <span>{{ __('Logout') }}</span>
                 </a>
 
                 <form id="logout-form" action="{{ route('logout', app()->getLocale()) }}" method="POST" style="display: none;">
