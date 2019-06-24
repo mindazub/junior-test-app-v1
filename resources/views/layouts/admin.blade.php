@@ -116,7 +116,7 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                {{ __('Dashboard') }}
+                <a href="{{ url(app()->getLocale() . '/dashboard') }}"><i class="fa fa-home"></i>  {{ __('Dashboard') }}</a>
                 <small>{{ __('created by mindazub') }}</small>
             </h1>
             <ol class="breadcrumb">
