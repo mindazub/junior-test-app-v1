@@ -43,12 +43,17 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                    <form action="{{ route('user.destroy', [app()->getLocale(), $user->id]) }}" method="post">
-                                        {{ csrf_field() }}
-                                        {{ method_field('delete') }}
-                                        <input class="btn btn-sm btn-danger" type="submit"
-                                               value="{{ __('Delete') }}">
-                                    </form>
+                                    @if(auth()->user()->email = 'admin@admin.com')
+                                        <a href="{{ route('user.show', [app()->getLocale(), $user->id]) }}">Info</a>
+                                        admin role
+                                    @else
+                                        <form action="{{ route('user.destroy', [app()->getLocale(), $user->id]) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('delete') }}
+                                            <input class="btn btn-sm btn-danger" type="submit"
+                                                   value="{{ __('Delete') }}">
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
