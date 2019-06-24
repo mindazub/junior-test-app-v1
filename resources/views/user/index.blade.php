@@ -45,7 +45,7 @@
                                 <td>
                                     @if(auth()->user()->email = 'admin@admin.com')
                                         <a href="{{ route('user.show', [app()->getLocale(), $user->id]) }}">Info</a>
-                                        admin role
+
                                     @else
                                         <form action="{{ route('user.destroy', [app()->getLocale(), $user->id]) }}" method="post">
                                             {{ csrf_field() }}
