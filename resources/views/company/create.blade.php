@@ -16,7 +16,7 @@
 
                             <div class="form-group">
                                 <label for="name">{{ __('Name') }}:</label>
-                                <input id="name" class="form-control" type="text" name="name" value="">
+                                <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}">
                                 @if($errors->has('name'))
                                     <div class="alert-danger">{{ $errors->first('name') }}</div>
                                 @endif
@@ -24,7 +24,7 @@
 
                             <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
-                                <input id="website" class="form-control" type="text" name="website" value="">
+                                <input id="website" class="form-control" type="text" name="website" value="{{ old('website') }}">
                                 @if($errors->has('website'))
                                     <div class="alert-danger">{{ $errors->first('website') }}</div>
                                 @endif
@@ -32,7 +32,7 @@
 
                             <div class="form-group">
                                 <label for="email">{{ __('Email') }}:</label>
-                                <input id="email" class="form-control" type="text" name="email" value="">
+                                <input id="email" class="form-control" type="text" name="email" value="{{ old('email') }}">
                                 @if($errors->has('email'))
                                     <div class="alert-danger">{{ $errors->first('email') }}</div>
                                 @endif

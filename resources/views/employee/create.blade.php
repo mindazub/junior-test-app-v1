@@ -20,7 +20,7 @@
 
                             <div class="form-group">
                                 <label for="firstName">{{ __('First Name') }}:</label>
-                                <input id="firstName" class="form-control" type="text" name="firstName" value="">
+                                <input id="firstName" class="form-control" type="text" name="firstName" value="{{ old('firstName') }}">
                                 @if($errors->has('firstName'))
                                     <div class="alert-danger">{{ $errors->first('firstName') }}</div>
                                 @endif
@@ -28,7 +28,7 @@
 
                             <div class="form-group">
                                 <label for="lastName">{{ __('Last Name') }}:</label>
-                                <input id="lastName" class="form-control" type="text" name="lastName" value="">
+                                <input id="lastName" class="form-control" type="text" name="lastName" value="{{ old('lastName') }}">
                                 @if($errors->has('lastName'))
                                     <div class="alert-danger">{{ $errors->first('lastName') }}</div>
                                 @endif
@@ -36,7 +36,7 @@
 
                             <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
-                                <input id="website" class="form-control" type="text" name="website" value="">
+                                <input id="website" class="form-control" type="text" name="website" value="{{ old('website') }}">
                                 @if($errors->has('website'))
                                     <div class="alert-danger">{{ $errors->first('website') }}</div>
                                 @endif
@@ -44,7 +44,7 @@
 
                             <div class="form-group">
                                 <label for="phone">{{ __('Phone') }}:</label>
-                                <input id="phone" class="form-control" type="text" name="phone" value="">
+                                <input id="phone" class="form-control" type="text" name="phone" value="{{ old('phone') }}">
                                 @if($errors->has('phone'))
                                     <div class="alert-danger">{{ $errors->first('phone') }}</div>
                                 @endif
@@ -52,7 +52,7 @@
 
                             <div class="form-group">
                                 <label for="email">{{ __('Email') }}:</label>
-                                <input id="email" class="form-control" type="text" name="email" value="">
+                                <input id="email" class="form-control" type="text" name="email" value="{{ old('email') }}">
                                 @if($errors->has('email'))
                                     <div class="alert-danger">{{ $errors->first('email') }}</div>
                                 @endif

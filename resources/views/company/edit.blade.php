@@ -50,7 +50,7 @@
                             <div class="form-group">
                                 <label for="logo">{{ __('Logo') }}</label>
                                 <input id="logo" class="form-control" type="file" name="logo"
-                                       accept=".jpg, .jpeg, .png">
+                                       accept=".jpg, .jpeg, .png" value="{{ old('logo', $company->logo) }}">
                                 @if($errors->has('logo'))
                                     <div class="alert-danger">{{ $errors->first('logo') }}</div>
                                 @endif
