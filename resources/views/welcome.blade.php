@@ -17,7 +17,7 @@
                         Basic Laravel Auth: ability to log in as administrator
                     </li>
                     <li>
-                        Use database seeds to create first user with email admin@admin.com and password “password”
+                        Use database seeds to create first user with admin email and admin password
                     </li>
                     <li>
                         CRUD functionality (Create / Read / Update / Delete) for two menu items: Companies and Employees.
