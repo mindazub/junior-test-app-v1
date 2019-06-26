@@ -79,11 +79,59 @@
             </div>
             <!-- /.box -->
         @else
-            <div class="box">
+            <div class="box my-box" style="background-color: #ecf0f5;">
                 <div class="box-header">
-                    <h1>No items found, please try again press <a href="{{ route('employee.index', app()->getLocale()) }}">back</a></h1>
+                    <h2 class="box-title">{{ __('Employee Table') }}</h2><span>&nbsp&nbsp<a class="btn btn-sm btn-success" href="{{ route('employee.create', app()->getLocale()) }}">{{ __('Add Employee') }}</a></span>
+
+                    @if(isset($q))
+                        <div class="box-body table-responsive no-padding">
+                            <table class="table table-hover">
+                                <tbody>
+
+                                <tr>
+                                    <th>
+                                        <h3>Search results for: <span>"{{ $q }}"</span></h3>
+                                    </th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
+
+                    <div class="box-tools">
+                        <form class="input-group-btn input-group-sm" style="width: 250px;" action="{{ route('search.employee', app()->getLocale()) }}" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control pull-right" name="q"
+                                       placeholder="{{ __('Search for employees') }}"
+                                       value="{{ old('q') }}">
+                                <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-default">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                            </span>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+
+                        <tr>
+                            <th>
+                                <h3>No items found, please go <a href="{{ Route('employee.index', app()->getLocale()) }}">Back</a> or <a href="{{ route('employee.create', app()->getLocale()) }}">Create an Employee</a></h3>
+                            </th>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
             </div>
+            <!-- /.box -->
         @endif
     </div>
 
