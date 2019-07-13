@@ -17,6 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->bigIncrements('id');
             $table->string('firstName');
             $table->string('lastName');
+            $table->string('photo')->nullable();
             $table->unsignedInteger('company_id')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('website')->unique()->nullable();

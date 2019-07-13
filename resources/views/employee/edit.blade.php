@@ -38,6 +38,29 @@
                                 @endif
                             </div>
 
+
+                            <div class="form-group">
+                                <label for="photo">{{ __('Photo') }}
+
+                                    @if(!$employee->photo == 'photo')
+                                        <small style="color:red;">Current: <img width="20" src="/images/anonymous.png" alt="photo default">
+                                    @else
+                                        <small style="color:red;">Current: <img width="20" src="{{ Storage::url($employee->photo ) }}" alt="photo original">
+                                        </small>
+                                    @endif
+
+                                </label>
+                                <input id="photo" class="form-control" type="file" name="photo"
+                                       accept=".jpg, .jpeg, .png" value="{{ old('photo', $employee->photo) }}">
+                                @if($errors->has('photo'))
+                                    <div class="alert-danger">{{ $errors->first('photo') }}</div>
+                                @endif
+                            </div>
+
+
+
+
+
                             <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
                                 <input id="website" class="form-control" type="text" name="website"

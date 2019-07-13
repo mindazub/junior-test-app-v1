@@ -3,9 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\UploadedFile;
 
 class EmployeeStoreRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -30,6 +32,8 @@ class EmployeeStoreRequest extends FormRequest
             'phone' => 'required',
             'email' => 'required',
             'company_id' => 'required',
+            'photo' => 'nullable|image|min:1|max:2048|dimensions:min_width:100,max_width:3000',
+
         ];
     }
 
@@ -79,6 +83,14 @@ class EmployeeStoreRequest extends FormRequest
     public function getCompanyId(): int
     {
         return $this->input('company_id');
+    }
+
+    /**
+     * @return UploadedFile|null
+     */
+    public function getPhoto(): ? UploadedFile
+    {
+        return $this->file('photo');
     }
 
 }

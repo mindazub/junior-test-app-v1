@@ -34,6 +34,7 @@
                             <th>ID</th>
                             <th>{{ __('First Name') }}</th>
                             <th>{{ __('Last Name') }}</th>
+                            <th>{{ __('Photo') }}</th>
                             <th>{{ __('Website') }}</th>
                             <th>{{ __('Phone') }}</th>
                             <th>{{ __('Email') }}</th>
@@ -46,6 +47,14 @@
                                 <td>{{ $employee->id }}</td>
                                 <td>{{ $employee->firstName }}</td>
                                 <td>{{ $employee->lastName }}</td>
+                                @if(! $employee->photo == 'photo')
+                                    <td><img width="50" src="/images/anonymous.png" alt="Default Picture"></td>
+                                @else
+                                    <td><img width="50" src="{{ Storage::url($employee->photo ) }}" alt="Employee Photo">
+                                    </td>
+                                @endif
+
+
                                 <td>{{ $employee->website }}</td>
                                 <td>{{ $employee->phone }}</td>
                                 <td>{{ $employee->email }}</td>

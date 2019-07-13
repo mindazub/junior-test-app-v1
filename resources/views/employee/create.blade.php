@@ -35,6 +35,15 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="logo">{{ __('Photo') }}</label>
+                                <input id="photo" class="form-control" type="file" name="photo"
+                                       accept=".jpg, .jpeg, .png">
+                                @if($errors->has('photo'))
+                                    <div class="alert-danger">{{ $errors->first('photo') }}</div>
+                                @endif
+                            </div>
+
+                            <div class="form-group">
                                 <label for="website">{{ __('Website') }}:</label>
                                 <input id="website" class="form-control" type="text" name="website" value="{{ old('website') }}">
                                 @if($errors->has('website'))

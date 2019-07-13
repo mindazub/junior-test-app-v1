@@ -5,7 +5,12 @@
 
 
 <div class="card" style="width: 18rem;">
-    <img class="profile-user-img img-responsive img-circle" src="http://www.iconninja.com/files/26/732/1023/communication-male-cyber-avatar-man-person-crime-human-profile-head-anonymous-hacker-creative-icon.png" alt="User profile picture">
+
+    @if(! $employee->photo == 'photo')
+        <img class="profile-user-img img-responsive img-circle" src="/images/anonymous.png" alt="Employee default picture">
+    @else
+        <img class="profile-user-img img-responsive img-circle" src="{{ Storage::url($employee->photo) }}" alt="Employee profile picture">
+    @endif
 
     <div class="card-body">
         <h2 class="card-title">{{ $employee->firstName }} {{ $employee->lastName }}</h2>

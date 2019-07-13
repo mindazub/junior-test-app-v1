@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Company;
+use App\Http\Requests\CompanyUpdateRequest;
 use App\Http\Requests\EmployeeUpdateRequest;
 use App\Http\Requests\EmployeeStoreRequest;
 use Illuminate\Http\RedirectResponse;
@@ -11,6 +12,9 @@ use Illuminate\View\View;
 
 class EmployeeController extends Controller
 {
+
+    const PHOTO_DIRECTORY = 'photos';
+
     /**
      * Display a listing of the resource.
      *
@@ -64,6 +68,7 @@ class EmployeeController extends Controller
             'phone' => $request->getPhone(),
             'email'=> $request->getEmail(),
             'company_id' => $request->getCompanyId(),
+            'photo' => $request->getPhoto()? $request->getPhoto()->store(self::PHOTO_DIRECTORY) : null,
         ];
 
         try{
@@ -111,6 +116,10 @@ class EmployeeController extends Controller
             'email'=> $request->getEmail(),
             'company_id' => $request->getCompanyId(),
         ];
+
+        if($request->getPhoto()) {
+            $data['photo'] = $request->getPhoto()->store(self::PHOTO_DIRECTORY);
+        }
 
         $employee->update($data, [app()->getLocale(), $employee->id]);
 
