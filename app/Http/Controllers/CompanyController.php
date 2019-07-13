@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Employee;
 use App\Http\Requests\CompanyStoreRequest;
 use App\Http\Requests\CompanyUpdateRequest;
 use Illuminate\Http\RedirectResponse;
@@ -32,6 +33,19 @@ class CompanyController extends Controller
     public function create():View
     {
         return View('company.create');
+    }
+
+    /**
+     *
+     * Show a selected resource
+     *
+     * @param $locale
+     * @param Company $company
+     * @return View
+     */
+    public function show($locale, Company $company): View
+    {
+        return view('company.show', compact('locale', 'company'));
     }
 
     /**
@@ -118,11 +132,11 @@ class CompanyController extends Controller
         try {
             $company->delete();
             return redirect()
-                ->back()
+                ->route('company.index', app()->getLocale())
                 ->with('status', 'Company deleted successfully!');
         } catch (\Throwable $exception) {
             return redirect()
-                ->back()
+                ->route('company.index', app()->getLocale())
                 ->with('error', $exception->getMessage());
         }
     }

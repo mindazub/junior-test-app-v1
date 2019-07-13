@@ -18,8 +18,8 @@ Route::group([
 
     Auth::routes(['register' => false]);
 
-
     Route::group(['middleware' => 'auth'], function () {
+
 
         Route::get('/home', 'CompanyController@index')->name('home');
 
@@ -29,13 +29,20 @@ Route::group([
             Route::get('employee-datatable', 'DashboardController@employee')->name('employee.data');
             Route::get('company-datatable', 'DashboardController@company')->name('company.data');
 
+            Route::get('cv-webdev', 'DescriptionController@webdev')->name('cv.webdev');
+            Route::get('cv-university', 'DescriptionController@university')->name('cv.university');
+
+
+
             Route::post('/searchCompany', 'SearchController@searchCompany')->name('search.company');
             Route::post('/searchEmployee', 'SearchController@searchEmployee')->name('search.employee');
             Route::post('/searchUser', 'SearchController@searchUser')->name('search.user');
 
+
             Route::resource('company', 'CompanyController');
             Route::resource('employee', 'EmployeeController');
             Route::resource('user', 'UserController');
+
         });
     });
 

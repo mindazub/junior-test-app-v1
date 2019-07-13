@@ -19,25 +19,24 @@ class DashboardController extends Controller
 
         return view('adminlte.dashboard.index', compact('users', 'employees', 'companies'));
     }
-    
+
     /**
      * Displays datatables front end view
      *
+     * @param $locale
      * @param Request $request
      * @return \Illuminate\View\View
      * @throws \Exception
      */
-    public function users(Request $request)
+    public function users($locale, Request $request)
     {
         if ($request->ajax()) {
             $data = User::latest()->get();
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-
-                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-
-                    return $btn;
+//                    $btn = '<a href="{{ route(\'user.index\', app()->getLocale()) }}" class="edit btn btn-primary btn-sm">View</a>';
+////                  return $btn;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -61,10 +60,8 @@ class DashboardController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-
-                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-
-                    return $btn;
+//                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+//                    return $btn;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -89,9 +86,9 @@ class DashboardController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
 
-                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+//                    $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
 
-                    return $btn;
+//                    return $btn;
                 })
                 ->rawColumns(['action'])
                 ->make(true);

@@ -37,6 +37,19 @@ class EmployeeController extends Controller
     }
 
     /**
+     *
+     * Show a selected resource
+     *
+     * @param $locale
+     * @param Employee $employee
+     * @return View
+     */
+    public function show($locale, Employee $employee): View
+    {
+        return view('employee.show', compact('locale', 'employee'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param EmployeeStoreRequest $request
@@ -119,11 +132,11 @@ class EmployeeController extends Controller
         try {
             $employee->delete();
             return redirect()
-                ->back()
+                ->route('employee.index', app()->getLocale())
                 ->with('status', 'Employee deleted successfully!');
         } catch (\Throwable $exception) {
             return redirect()
-                ->back()
+                ->route('employee.index', app()->getLocale())
                 ->with('error', $exception->getMessage());
         }
     }

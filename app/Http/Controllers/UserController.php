@@ -12,7 +12,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         $users = User::paginate();
 
@@ -26,9 +26,6 @@ class UserController extends Controller
      */
     public function show($locale, User $user): View
     {
-
-//        dd($user);
-
         return view('user.show', compact('locale', 'user'));
     }
 

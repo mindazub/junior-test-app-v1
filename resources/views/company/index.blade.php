@@ -55,17 +55,22 @@
                                 <td>{{ $company->email }}</td>
                                 <td>{{ $company->website }}</td>
                                 <td>
-                                    <a href="{{ route('company.edit', [app()->getLocale(), $company]) }}"
-                                       class="btn btn-sm btn-info">{{ __('Edit') }}</a>
-                                    <br>
-
-                                    <form action="{{ route('company.destroy', [app()->getLocale(), $company]) }}" method="post">
-                                        {{ csrf_field() }}
-                                        {{ method_field('delete') }}
-                                        <input class="btn btn-sm btn-danger" type="submit"
-                                               value="{{ __('Delete') }}">
-                                    </form>
-
+                                    <div class="btn-group" role="group" aria-label="all buttons">
+                                        <a type="button"
+                                           class="btn btn-sm btn-success"
+                                           href="{{ route('company.show', [app()->getLocale(), $company]) }}"
+                                        >Show</a>
+                                        <a type="button"
+                                           class="btn btn-sm btn-info btn-secondary"
+                                           href="{{ route('company.edit', [app()->getLocale(), $company]) }}"
+                                        >Edit</a>
+                                        <form style="display: flex;" action="{{ route('company.destroy', [app()->getLocale(), $company]) }}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('delete') }}
+                                            <input class="btn btn-sm btn-danger btn-secondary" type="submit"
+                                                   value="{{ __('Delete') }}">
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

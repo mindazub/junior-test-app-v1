@@ -5,6 +5,14 @@
     <div class="flex-center position-ref full-height">
 
         <div class="content">
+
+            <div id="app" class="container">
+                <example-component>
+
+                </example-component>
+            </div>
+
+
             <div class="title m-b-md">
                 Junior Laravel App:
             </div>
