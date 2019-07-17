@@ -47,8 +47,8 @@
 {{--            <li><a href="{{ url(app()->getLocale() . '/'.'nytimes') }}"><i class="fa fa-user"></i> <span>{{ __('NYT Vue News') }}</span></a></li>--}}
             <li class="header">{{ __('CV') }}</li>
 
-            <li><a href="#"><i class="fa fa-laptop"></i> <span>CV 4 Web Dev</span></a></li>
-            <li><a href="#"><i class="fa fa-university"></i> <span>CV 4 Scientist</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/cv-webdev') }}"><i class="fa fa-laptop"></i> <span>CV 4 Web Dev</span></a></li>
+            <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/cv-university') }}"><i class="fa fa-university"></i> <span>CV 4 Scientist</span></a></li>
 
             <li class="header">{{ __('CONTROL') }}</li>
 {{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}

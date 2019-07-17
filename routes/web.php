@@ -29,8 +29,8 @@ Route::group([
             Route::get('employee-datatable', 'DashboardController@employee')->name('employee.data');
             Route::get('company-datatable', 'DashboardController@company')->name('company.data');
 
-            Route::get('cv-webdev', 'DescriptionController@webdev')->name('cv.webdev');
-            Route::get('cv-university', 'DescriptionController@university')->name('cv.university');
+            Route::get('cv-webdev', 'DescriptionController@webdev');
+            Route::get('cv-university', 'DescriptionController@university');
 
 
 
