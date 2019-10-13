@@ -32,16 +32,18 @@ Route::group([
             Route::get('cv-webdev', 'DescriptionController@webdev');
             Route::get('cv-university', 'DescriptionController@university');
 
-
-
             Route::post('/searchCompany', 'SearchController@searchCompany')->name('search.company');
             Route::post('/searchEmployee', 'SearchController@searchEmployee')->name('search.employee');
             Route::post('/searchUser', 'SearchController@searchUser')->name('search.user');
+            Route::post('/searchPost', 'SearchController@searchPost')->name('search.post');
 
 
             Route::resource('company', 'CompanyController');
             Route::resource('employee', 'EmployeeController');
             Route::resource('user', 'UserController');
+
+            Route::resource('post', 'PostController');
+            Route::resource('comments', 'CommentController');
 
         });
     });

@@ -50,6 +50,12 @@
             <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/cv-webdev') }}"><i class="fa fa-laptop"></i> <span>CV 4 Web Dev</span></a></li>
             <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/cv-university') }}"><i class="fa fa-university"></i> <span>CV 4 Scientist</span></a></li>
 
+            <li class="header">{{ __('BLOG') }}</li>
+                        <li><a href="{{ url(app()->getLocale() . '/'.'dashboard/post' ) }}"><i class="fa fa-cog"></i><span>{{ __('Posts') }}</span></a></li>
+{{--                        <li><a href="{{ route('dashboard.blog') }}"><i class="fa fa-cog"></i><span>Comments</span></a></li>--}}
+{{--                        <li><a href="{{ route('dashboard.blog') }}"><i class="fa fa-cog"></i><span>Tags</span></a></li>--}}
+            <li>
+
             <li class="header">{{ __('CONTROL') }}</li>
 {{--            <li><a href="{{ route('dashboard.settings') }}"><i class="fa fa-cog"></i><span>Settings</span></a></li>--}}
             <li>

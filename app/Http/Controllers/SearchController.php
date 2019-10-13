@@ -53,4 +53,17 @@ class SearchController extends Controller
         return view('user.index', compact('users', 'q'));
     }
 
+    /**
+     * @return View
+     */
+    public function searchPost(): View
+    {
+        $q = Input::get ( 'q' );
+        $users = Post::where([
+            ['title', 'LIKE', '%' . $q . '%'],
+        ])->paginate();
+
+        return view('blog.index', compact('blog', 'q'));
+    }
+
 }
