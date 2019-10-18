@@ -59,11 +59,11 @@ class SearchController extends Controller
     public function searchPost(): View
     {
         $q = Input::get ( 'q' );
-        $users = Post::where([
+        $posts = Post::where([
             ['title', 'LIKE', '%' . $q . '%'],
         ])->paginate();
 
-        return view('blog.index', compact('blog', 'q'));
+        return view('blog.index', compact('posts', 'q'));
     }
 
 }
