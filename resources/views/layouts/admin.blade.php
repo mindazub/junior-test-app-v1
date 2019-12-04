@@ -80,7 +80,7 @@ desired effect
         <!-- Logo -->
         <a href="{{ url(app()->getLocale() . '/dashboard') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>J</b>LT</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Junior</b>LTE</span>
         </a>
